@@ -5,7 +5,6 @@ import java.io.*;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDate;
-import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
@@ -30,11 +29,11 @@ class BestGymEver {
             JOptionPane.showMessageDialog(null,"du får ej skriva in \" \\\\ \"");
             System.exit(0);
         }
-        String[] allt2 = getKundLista(path.toString());
+        String[] alltArray = getKundLista(path.toString());
         String regEx = "((" + input + ", [a-zA-Z ]+)|(\\d+, " + input + "))";
-        for (int i = 0; i < allt2.length; i += 2) {
-            if (allt2[i].matches(regEx)) {
-                return new Kund(allt2[i].trim(), allt2[i + 1].trim());
+        for (int i = 0; i < alltArray.length; i += 2) {
+            if (alltArray[i].matches(regEx)) {
+                return new Kund(alltArray[i].trim(), alltArray[i + 1].trim());
             }
         }
         JOptionPane.showMessageDialog(null, "Personen finns inte med i kund listan\nprogrammet avslutas.");
