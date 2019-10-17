@@ -10,7 +10,7 @@ class Kund {
 
     Kund(String namnOchNr, String betalning) {
         this.personNummer = namnOchNr.substring(0, namnOchNr.indexOf(','));
-        this.namn = namnOchNr.substring(namnOchNr.indexOf(" "));
+        this.namn = namnOchNr.substring(namnOchNr.indexOf(" ")).trim();
         this.senastBetalning = LocalDate.parse(betalning);
     }
 

@@ -33,7 +33,7 @@ class BestGymEver {
         String regEx = "((" + input + ", [a-zA-Z ]+)|(\\d+, " + input + "))";
         for (int i = 0; i < alltArray.length; i += 2) {
             if (alltArray[i].matches(regEx)) {
-                return new Kund(alltArray[i].trim(), alltArray[i + 1].trim());
+                return new Kund(alltArray[i], alltArray[i + 1]);
             }
         }
         JOptionPane.showMessageDialog(null, "Personen finns inte med i kund listan\nprogrammet avslutas.");
