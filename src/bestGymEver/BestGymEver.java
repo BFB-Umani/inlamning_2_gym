@@ -9,7 +9,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 class BestGymEver {
-    static Path path = Paths.get("C:\\intelliJ\\inlämning_2_gym\\customers.txt");
+    private static Path path = Paths.get("C:\\intelliJ\\inlämning_2_gym\\customers.txt");
 
     String getAnvändarInput() {
         try {
@@ -65,7 +65,7 @@ class BestGymEver {
         boolean betalandeKund = kund1.getBetalandeKund(idag);
 
         if (betalandeKund) {
-            JOptionPane.showMessageDialog(null, "Kunden är medlem.");
+            JOptionPane.showMessageDialog(null, kund1.getNamn() +" är betalande medlem.");
 
             try (PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("betalande_kund.txt", true)))) {
                 out.println(kund1.getPersonNummer() + ", " + kund1.getNamn() + "\n" + idag);
@@ -79,7 +79,7 @@ class BestGymEver {
         }
     }
 
-    void printToName(Kund kund1, LocalDate idag) throws IOException {
+    private void printToName(Kund kund1, LocalDate idag) throws IOException {
         try (PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(kund1.getNamn() + ".txt")))) {
             out.println(kund1.getPersonNummer() + ", " + kund1.getNamn() + "\n" + idag);
         } catch (FileNotFoundException e) {

@@ -8,9 +8,9 @@ class Kund {
     private String namn;
     private LocalDate senastBetalning;
 
-    Kund(String namn, String betalning) {
-        this.personNummer = namn.substring(0, namn.indexOf(','));
-        this.namn = namn.substring(namn.indexOf(" "));
+    Kund(String namnOchNr, String betalning) {
+        this.personNummer = namnOchNr.substring(0, namnOchNr.indexOf(','));
+        this.namn = namnOchNr.substring(namnOchNr.indexOf(" "));
         this.senastBetalning = LocalDate.parse(betalning);
     }
 
