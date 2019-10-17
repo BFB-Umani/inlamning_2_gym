@@ -5,6 +5,7 @@ import java.io.*;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
@@ -61,7 +62,7 @@ class BestGymEver {
 
     void printToFile(Kund kund1) throws IOException {
         LocalDate idag = LocalDate.now();
-        //idag.format(DateTimeFormatter.ofPattern("YYYY-MM-DD"));
+        idag.format(DateTimeFormatter.ofPattern("YYYY-MM-DD"));
         boolean betalandeKund = kund1.getBetalandeKund(idag);
 
         if (betalandeKund) {
