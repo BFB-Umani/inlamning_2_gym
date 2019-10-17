@@ -36,8 +36,9 @@ class BestGymEverTest {
     @Test
     void getKund() throws IOException {
         BestGymEver test = new BestGymEver();
-        Object kund1 = test.getKund("Alhambra Aromes");
+        Kund kund1 = test.getKund("Alhambra Aromes");
         //kollar så programmet returnar överhuvudtaget och att den inte returnar null
+        assertEquals("Alhambra Aromes", kund1.getNamn());
         assertNotNull(kund1);
     }
 }
