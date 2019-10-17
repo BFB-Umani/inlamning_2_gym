@@ -11,7 +11,7 @@ class KundTest {
 
     @Test
     void getBetalandeKund() {
-        LocalDate idag = LocalDate.now().minusDays(1);
+        LocalDate idag = LocalDate.now();
         idag.format(DateTimeFormatter.ofPattern("YYYY-MM-DD"));
         Kund k1 = new Kund("111111, person", idag + "");
         Kund k2 = new Kund("222222, person", "1970-01-01");
